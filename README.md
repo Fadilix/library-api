@@ -91,6 +91,32 @@ flask create_tables
 ```
 
 ### Get books of a category
+- **URL**: `/categories/<int:category_id>/books`
+- **Method**: `GET`
+- **Response**:
+```JSON
+[
+   {
+      "id": 1,
+      "isbn": "978-0-385-29724-7",
+      "title": "The Alchemist",
+      "publication_date": "1988-04-12T00:00:00",
+      "author": "Paulo Coelho",
+      "editor": "HarperCollins"
+    },
+    {
+      "id": 2,
+      "isbn": "978-0-345-60179-0",
+      "title": "The Hitchhiker's Guide to the Galaxy",
+      "publication_date": "1979-10-12T00:00:00",
+      "author": "Douglas Adams",
+      "editor": "Pan Books"
+    },
+    // other books...
+]
+
+
+```
 ### Get a book by id
 - **URL**: `/categories/<int:category_id>/books`
 - **Method**: `GET`
