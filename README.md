@@ -29,7 +29,7 @@ Before running the Flask API, make sure to set up your database configuration by
 # .env
 DATABASE_URI=<your_database_uri_here>
 ````
-#### Creating Tables
+## Creating Tables
 
 To create the necessary tables in the database, run the following Flask CLI command:
 
