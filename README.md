@@ -1,6 +1,6 @@
 # Library api documentation
 
-This documentation provides details about the endpoints and responses of the Flask API.
+This documentation provides details about the endpoints and responses of the Flask library API.
 
 ## Table of Contents
 
