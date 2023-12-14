@@ -9,7 +9,6 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
 # creating models
-
 class Book(db.Model):
     __tablename__ = "books"
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -85,6 +84,7 @@ def get_book_by_id(book_id):
 
 
 # Get books of a category
+
 @app.route("/categories/<int:category_id>/books", methods=["GET"])
 def get_books_by_category(category_id):
     category = Category.query.get(category_id)
