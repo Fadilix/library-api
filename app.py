@@ -1,8 +1,12 @@
 from flask import Flask, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 import os
+from flask_cors import CORS
 
 app = Flask(__name__)
+
+CORS(app)
+
 DATABASE_URI = os.getenv("DATABASE_URI")
 app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URI
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
@@ -20,7 +24,6 @@ class Book(db.Model):
 
     # foreign key
     category_id = db.Column(db.Integer, db.ForeignKey("categories.id"))
-
 
 class Category(db.Model):
     __tablename__ = "categories"
@@ -84,7 +87,6 @@ def get_book_by_id(book_id):
 
 
 # Get books of a category
-
 @app.route("/categories/<int:category_id>/books", methods=["GET"])
 def get_books_by_category(category_id):
     category = Category.query.get(category_id)
